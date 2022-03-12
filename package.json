@@ -2,7 +2,7 @@
     "name": "https-replacer",
     "displayName": "HTTPS Replacer",
     "author": "Zach K",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "launcherVersion": "10.0.0",
     "description": "Replaces all https with http in the selected curation.",
     "__icon": "icon.svg",
@@ -10,7 +10,7 @@
     "contributes": {
         "configuration": [
             {
-                "title": "Curator Tools",
+                "title": "HTTPS Replacer",
                 "properties": {
                     "com.curator-tools.replacer.regex": {
                         "title": "HTTPS File Regex",
