@@ -1,0 +1,32 @@
+{
+    "name": "https-replacer",
+    "displayName": "HTTPS Replacer",
+    "author": "Zach K",
+    "version": "0.1.0",
+    "launcherVersion": "10.0.0",
+    "description": "Replaces all https with http in the selected curation.",
+    "__icon": "icon.svg",
+    "main": "main.js",
+    "contributes": {
+        "configuration": [
+            {
+                "title": "Curator Tools",
+                "properties": {
+                    "com.curator-tools.replacer.regex": {
+                        "title": "HTTPS File Regex",
+                        "type": "string",
+                        "default": "\\.(x?html?|css|js|php|json|xa?ml|ya?ml)$",
+                        "description": "A regex matching file names that should have 'https://' replaced with 'http://' in them. Does not work with compressed files, like 'swf'."
+                    }
+                }
+            }
+        ],
+        "contextButtons": [
+            {
+                "context": "curation",
+                "name": "Replace HTTPS",
+                "command": "curator-tools.replace"
+            }
+        ]
+    }
+}
