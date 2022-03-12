@@ -61,12 +61,20 @@ function activate(context) {
             // Asyncroniously replace content in files
             for (const file of files) {
                 try {
+                    // Replacement count in file
+                    let n = 0;
+                    
                     // Read data in file first
                     const content = String(await fs.promises.readFile(file));
                     // Replace all HTTPS, while incrementing the counter
                     await fs.promises.writeFile(file,
-                        content.replace(HTTPS, () => { replaced++; return HTTP; })
+                        content.replace(HTTPS, (a) => {
+                            replaced++;
+                            n++;
+                            return HTTP;
+                        })
                     );
+                    if (n > 0) flashpoint.log.info(`Replaced ${n} https instances in file "${file}"`);
                 } catch (err) {
                     flashpoint.log.error(`Could not replace in file "${file}"; ${err}`);
                 }

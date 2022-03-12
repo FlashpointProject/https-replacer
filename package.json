@@ -2,7 +2,7 @@
     "name": "https-replacer",
     "displayName": "HTTPS Replacer",
     "author": "Zach K",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "launcherVersion": "10.0.0",
     "description": "Replaces all https with http in the selected curation.",
     "__icon": "icon.svg",
